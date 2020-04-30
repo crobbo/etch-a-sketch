@@ -1,5 +1,7 @@
 const sketchArea = document.getElementById('sketch-area');
 
+// draws sketch area
+
 function makeRows(rows, cols) {
     sketchArea.style.setProperty('--grid-rows', rows);
     sketchArea.style.setProperty('--grid-cols', cols);
@@ -18,3 +20,20 @@ const gridItem = document.querySelectorAll('.grid-item');
 gridItem.forEach(gridItem => gridItem.addEventListener('mouseover', () => {
   event.target.style.backgroundColor = "#727372"
 }));
+
+
+//Grid Reset
+const btn = document.querySelector("#btn");
+  btn.addEventListener('click', () => {
+    resetGrid();
+  })  
+
+function resetGrid() {
+  gridItem.forEach(gridItem => gridItem.style.backgroundColor = "#cfd1d0")
+  let newColVal = document.querySelector('#newColVal').value;
+  let newRowVal = document.querySelector('#newRowVal').value;
+  makeRows(newRowVal, newColVal);
+}
+
+
+
