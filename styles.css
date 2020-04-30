@@ -91,14 +91,13 @@
 }
 
 .button {
-    padding: 8px;
-    color: cfd1d0;
+    padding: 10px;
+    color: black;
+    background-color:white;
+    border: 1px solid black;
+    
 
 }
-
-/* .button:active {
-    background-color:black;
-} */
 
 .button-container input {
     height: 30px;
@@ -107,7 +106,8 @@
 }
 
 p {
-    font-family: arial;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 22px;
     grid-area: header;
     text-align: center;
     position: relative;
@@ -120,4 +120,16 @@ p {
 
 #grid-text {
     text-align: left;
+    position: relative;
+    left: 20px;
+    display: inline-block
+}
+
+#color-text {
+    text-align: right;
+    display: inline-block;
+    float: right;
+    position: relative;
+    right: 67px;
+
 }

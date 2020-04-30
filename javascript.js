@@ -32,7 +32,12 @@ function resetGrid() {
   gridItem.forEach(gridItem => gridItem.style.backgroundColor = "#cfd1d0")
   let newColVal = document.querySelector('#newColVal').value;
   let newRowVal = document.querySelector('#newRowVal').value;
-  makeRows(newRowVal, newColVal);
+  if (newColVal > 0 && newRowVal > 0){
+    makeRows(newRowVal, newColVal);
+  } else {
+    alert("Please enter values greater than 0");
+  }
+  
 }
 
 // color change
@@ -42,19 +47,38 @@ const greenBtn = document.getElementById('greenBtn');
 const pinkBtn = document.getElementById('pinkBtn');
 
 randomBtn.addEventListener('click', () => {
+    pinkBtn.style.backgroundColor = "white";
+    greenBtn.style.backgroundColor = "white";
+    pinkBtn.style.color = "black";
+    greenBtn.style.color = "black";
+    randomBtn.style.backgroundColor = "#03a9fc";
+    randomBtn.style.color = "white";
   gridItem.forEach(gridItem => gridItem.addEventListener('mouseover', () => {
     const randomColor = Math.floor(Math.random()*16777215).toString(16);
     event.target.style.backgroundColor = "#" + randomColor;
+    
   }));
 })
 
 pinkBtn.addEventListener('click', () => {
+    randomBtn.style.backgroundColor = "white";
+    greenBtn.style.backgroundColor = "white";
+    randomBtn.style.color = "black";
+    greenBtn.style.color = "black";
+    pinkBtn.style.backgroundColor = "#03a9fc";
+    pinkBtn.style.color = "white";
   gridItem.forEach(gridItem => gridItem.addEventListener('mouseover', () => {
     event.target.style.backgroundColor = "#f52ca8";
   }));
 })
 
 greenBtn.addEventListener('click', () => {
+    pinkBtn.style.backgroundColor = "white";
+    randomBtn.style.backgroundColor = "white";
+    pinkBtn.style.color = "black";
+    randomBtn.style.color = "black";
+    greenBtn.style.backgroundColor = "#03a9fc";
+    greenBtn.style.color = "white";
   gridItem.forEach(gridItem => gridItem.addEventListener('mouseover', () => {
     event.target.style.backgroundColor = "green";
   }));
