@@ -10,12 +10,6 @@
     grid-template-columns: repeat(var(--grid-cols), 1fr);
 }
 
-/* .grid-item { 
-    padding: 1em;
-    border: 1px solid #ddd;
-    text-align: center;
-} */
-
 .grid-item {
     padding: 1em;
     border: 1px solid #ddd;
