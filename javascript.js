@@ -13,7 +13,7 @@ function makeRows(rows, cols) {
 
 };
 
-makeRows(50, 50);
+makeRows(100, 100);
 
 const gridItem = document.querySelectorAll('.grid-item');
 
