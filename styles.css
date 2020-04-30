@@ -3,15 +3,77 @@
     --grid-cols: 1; 
 }
 
+#page-container {
+    display:grid;
+    grid-template-columns: 1fr 800px 1fr;
+    grid-template-rows: 100px 1fr;
+    grid-template-areas: 
+                 " header header header"
+                 ". sketch-area .";        
+
+}
+
 #sketch-area {
     display: grid;
-    grid-gap: 1em;
+    grid-area: sketch-area;
+    justify-content: center;
+    align-content: center;
+    align-self: center;
+    grid-gap: 0;
+    height: 550px;
     grid-template-rows: repeat(var(--grid-rows), 1fr);
     grid-template-columns: repeat(var(--grid-cols), 1fr);
+    border-style: solid;
+    border-width: 100px;
+    border-color: #f52a2a;
+    border-radius: 20px;
+    box-shadow: 4px 4px #cf0606;
 }
 
 .grid-item {
-    padding: 1em;
+    /* padding: 1em; 
     border: 1px solid #ddd;
+    text-align: center; */
+    background-color: lightgray;
+}
+
+
+.main-header {
+    grid-area: sketch-area;
     text-align: center;
-  }
+    align-self: start;
+    font-family: 'Cabin Sketch', cursive;
+    font-size: 34px;
+    font-weight: 400;
+    z-index: 1;
+    position: relative;
+    bottom: 32px;
+}
+
+.toggle {
+    height: 100px;
+    width:100px;
+    border-radius: 100%;
+    background-color: lightgrey;
+    box-shadow: 2px 2px lightslategray;
+    
+}
+
+#left-toggle {
+    grid-area: sketch-area;
+    align-self: end;
+    position: relative;
+    left: 8px;
+    bottom: 8px;
+}
+
+#right-toggle {
+    grid-area: sketch-area;
+    align-self: end;
+    justify-self: end;
+    position: relative;
+    right: 8px;
+    bottom: 8px;
+    
+
+}
