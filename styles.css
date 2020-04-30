@@ -8,8 +8,8 @@
     grid-template-columns: 1fr 800px 1fr;
     grid-template-rows: 100px 1fr;
     grid-template-areas: 
-                 " header header header"
-                 ". sketch-area .";        
+                 " . header ."
+                 ". sketch-area rightBtns";        
 
 }
 
@@ -49,6 +49,12 @@
     bottom: 2px;
 }
 
+#title {
+
+    margin-bottom: 0px;
+}
+
+
 .toggle {
     height: 100px;
     width:100px;
@@ -86,8 +92,13 @@
 
 .button {
     padding: 8px;
+    color: cfd1d0;
 
 }
+
+/* .button:active {
+    background-color:black;
+} */
 
 .button-container input {
     height: 30px;
@@ -101,4 +112,12 @@ p {
     text-align: center;
     position: relative;
     top: 10px;
+}
+
+#randomBtn {
+    margin-left: 40px; 
+}
+
+#grid-text {
+    text-align: left;
 }

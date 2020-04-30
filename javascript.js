@@ -35,5 +35,48 @@ function resetGrid() {
   makeRows(newRowVal, newColVal);
 }
 
+// color change
+
+const randomBtn = document.getElementById('randomBtn');
+const greenBtn = document.getElementById('greenBtn');
+const pinkBtn = document.getElementById('pinkBtn');
+
+randomBtn.addEventListener('click', () => {
+  gridItem.forEach(gridItem => gridItem.addEventListener('mouseover', () => {
+    const randomColor = Math.floor(Math.random()*16777215).toString(16);
+    event.target.style.backgroundColor = "#" + randomColor;
+  }));
+})
+
+pinkBtn.addEventListener('click', () => {
+  gridItem.forEach(gridItem => gridItem.addEventListener('mouseover', () => {
+    event.target.style.backgroundColor = "#f52ca8";
+  }));
+})
+
+greenBtn.addEventListener('click', () => {
+  gridItem.forEach(gridItem => gridItem.addEventListener('mouseover', () => {
+    event.target.style.backgroundColor = "green";
+  }));
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
