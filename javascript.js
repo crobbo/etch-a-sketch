@@ -5,6 +5,7 @@ const sketchArea = document.getElementById('sketch-area');
 function makeRows(rows, cols) {
     sketchArea.style.setProperty('--grid-rows', rows);
     sketchArea.style.setProperty('--grid-cols', cols);
+    sketchArea.style.backgroundColor = "lightgray";
     for (c = 0; c < (rows*cols); c++) {
         let cell = document.createElement('div');
         // cell.innerText = (c + 1);
@@ -12,13 +13,17 @@ function makeRows(rows, cols) {
     };
 
 };
-
 makeRows(100, 100);
+makeRows(20, 20);
 
 const gridItem = document.querySelectorAll('.grid-item');
 
 gridItem.forEach(gridItem => gridItem.addEventListener('mouseover', () => {
-  event.target.style.backgroundColor = "#727372"
+  event.target.style.backgroundColor = "#727372";
+  let darkerTen = Number(event.target.style.opacity) + 0.2;
+  // event.target.style.opacity = `${darkerTen + 0.1}`;   // alterntive solution to darkering the drawing each mouseover
+  event.target.style.opacity = (darkerTen += 0.1);
+         
 }));
 
 
@@ -29,7 +34,8 @@ const btn = document.querySelector("#btn");
   })  
 
 function resetGrid() {
-  gridItem.forEach(gridItem => gridItem.style.backgroundColor = "#cfd1d0")
+  gridItem.forEach(gridItem => gridItem.style.backgroundColor = "#lightgray")
+  gridItem.forEach(gridItem => gridItem.style.opacity = 0);
   let newColVal = document.querySelector('#newColVal').value;
   let newRowVal = document.querySelector('#newRowVal').value;
   if (newColVal > 0 && newRowVal > 0){

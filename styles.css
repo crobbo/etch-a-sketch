@@ -6,10 +6,11 @@
 #page-container {
     display:grid;
     grid-template-columns: 1fr 800px 1fr;
-    grid-template-rows: 100px 1fr;
+    grid-template-rows: 100px 1fr 100px;
     grid-template-areas: 
                  " . header ."
-                 ". sketch-area rightBtns";        
+                 ". sketch-area rightBtns"
+                 ". . . ";        
 
 }
 
@@ -27,13 +28,14 @@
     border-width: 100px;
     border-color: #f52a2a;
     border-radius: 20px;
-    box-shadow: 4px 4px #cf0606;
+    box-shadow: 8px 8px #cf0606;
     position: relative;
     top: 30px;
 }
 
 .grid-item {
     background-color: lightgray;
+    
 }
 
 
@@ -60,7 +62,7 @@
     width:100px;
     border-radius: 100%;
     background-color: #cfd1d0;
-    box-shadow: 2px 2px lightslategray;
+    box-shadow: 3px 3px lightslategray;
     
 }
 
